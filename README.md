@@ -13,7 +13,9 @@ A Python-based GUI application for encrypting and decrypting messages using cust
 ## Prerequisites
 
 - Python 3.10+
-- A Groq API Key (The application currently uses a hardcoded key in `ai_engine.py`, but it is recommended to use environment variables for security).
+- **Groq API Key:** For AI-powered decryption to work, you must set the `GROQ_API_KEY` environment variable.
+  - **Windows (PowerShell):** `$env:GROQ_API_KEY="your_key_here"`
+  - **Linux/macOS:** `export GROQ_API_KEY="your_key_here"`
 
 ## Installation
 
