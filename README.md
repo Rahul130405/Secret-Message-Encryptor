@@ -1,68 +1,101 @@
-# Secret Message Encryptor
+# 🔐 Secret Message Encryptor
 
-A Python-based GUI application for encrypting and decrypting messages using custom substitution and swap ciphers, featuring AI-assisted cryptanalysis.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Groq-f38020?style=for-the-badge&logo=groq&logoColor=white" alt="Groq" />
+  <img src="https://img.shields.io/badge/Tkinter-00599C?style=for-the-badge&logo=python&logoColor=white" alt="Tkinter" />
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained" />
+</p>
 
-## Features
+---
 
-- **Custom Encryption:** Combines character swapping with an AI-generated substitution map and shift cipher.
-- **AI Decrypt Assistant:** Integrates with the Groq API (using Llama models) to attempt cryptanalysis on encrypted strings.
-- **Key Storage:** Automatically manages encryption keys and character mapping in `secret_key.json`.
-- **QR Code Support:** (In development/Integrated) Capability to handle encrypted data via QR codes.
-- **User-Friendly GUI:** Built with `tkinter` for a simple, interactive experience.
+### 🌟 **"Bridging Classical Cryptography with LLM-Powered Cryptanalysis"**
 
-## Prerequisites
+**Built by Rahul Raj Jaiswal**, an aspiring software developer passionate about AI integration, full-stack architecture, and building intelligent solutions to real-world problems.
 
+---
+
+## 🚀 **Core Features**
+
+- 🛠️ **Custom Encryption:** Combines character swapping with an AI-generated substitution map and shift cipher.
+- 🤖 **AI Decrypt Assistant:** Integrates with the **Groq API** (Llama 3.1) to attempt heuristic cryptanalysis on encrypted strings.
+- 💾 **Key Management:** Automatically handles encryption keys and character mapping via `secret_key.json`.
+- 📱 **QR Integration:** Built-in capability to handle encrypted data via QR codes (under development).
+- 🎨 **Modern GUI:** A clean, interactive experience powered by `tkinter` and `Pillow`.
+
+---
+
+## 💡 **Why This Project Matters**
+
+> *"Securing data through custom algorithmic ciphers while exploring the frontiers of AI-driven cryptanalysis."*
+
+In an era of ubiquitous AI, this project demonstrates:
+*   **AI Integration:** Real-world usage of High-inference LLMs for complex pattern recognition.
+*   **Document Intelligence:** Leveraging AI to solve problems where traditional keys are missing.
+*   **Engineering Rigor:** Clean separation of concerns between crypto logic, UI, and AI layers.
+
+---
+
+## 📂 **Project Architecture**
+
+```bash
+GUI/
+├── 📄 main.py                # GUI Orchestration & Entry Point
+├── 🧠 ai_engine.py           # Groq LLM Integration (Llama 3.1)
+├── 🔐 crypto_engine.py       # Core Encryption/Decryption Algorithms
+├── 🔑 ai_key_generator.py    # Randomized Key & Map Generation
+├── 📁 key_storage.py         # Secure Local JSON Persistence
+└── 📜 requirements.txt       # Project Dependencies
+```
+
+---
+
+## ⚙️ **Quick Start**
+
+### 1️⃣ Prerequisites
 - Python 3.10+
-- **Groq API Key:** For AI-powered decryption to work, you must set the `GROQ_API_KEY` environment variable.
-  - **Windows (PowerShell):** `$env:GROQ_API_KEY="your_key_here"`
-  - **Linux/macOS:** `export GROQ_API_KEY="your_key_here"`
+- **Groq API Key:** Set the `GROQ_API_KEY` environment variable.
+  - **Windows:** `$env:GROQ_API_KEY="your_key"`
+  - **Linux/macOS:** `export GROQ_API_KEY="your_key"`
 
-## Installation
+### 2️⃣ Installation
+```bash
+# Clone the repository
+git clone https://github.com/Rahul130405/Secret-Message-Encryptor.git
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd GUI
-   ```
+# Set up Virtual Environment
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-2. **Set up a virtual environment:**
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # On Windows
-   source .venv/bin/activate  # On macOS/Linux
-   ```
+# Install Dependencies
+pip install -r requirements.txt
+```
 
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 3️⃣ Run Application
+```bash
+python main.py
+```
 
-## Usage
+---
 
-1. **Run the application:**
-   ```bash
-   python main.py
-   ```
+## 👨‍💻 **About the Developer**
 
-2. **Encrypt a Message:**
-   - Enter your plaintext in the input field.
-   - Click "Encrypt". The encrypted text will appear, and the key will be saved locally.
+**Rahul Raj Jaiswal**  
+*Aspiring Software Developer | AI & Full-Stack Enthusiast*
 
-3. **Decrypt a Message:**
-   - Paste the encrypted text into the input field.
-   - Click "Decrypt". The app will use the stored `secret_key.json` to revert the transformation.
+<p align="left">
+  <a href="https://linkedin.com/in/rahul-raj-jaiswal" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/Rahul130405" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+</p>
 
-4. **AI Guess:**
-   - If you have an encrypted string but no key, click "AI Guess". The app will send the text to the Groq API to attempt a recovery of the original message.
+---
 
-## Project Structure
+## 🛡️ **Security Note**
+This project is a **technical demonstration** of AI and algorithmic logic. For production-level data security, always use industry-standard encryption libraries like AES-256 (e.g., `cryptography.fernet`).
 
-- `main.py`: The entry point and GUI logic.
-- `crypto_engine.py`: Core encryption/decryption algorithms (swap and obfuscation).
-- `ai_engine.py`: Groq API integration for AI-powered decryption guesses.
-- `ai_key_generator.py`: Generates randomized shift and mapping keys.
-- `key_storage.py`: Handles saving and loading keys from `secret_key.json`.
-
-## Security Note
-
-This project is intended for educational and personal use. While it uses multiple layers of obfuscation, it is not a replacement for industry-standard encryption like AES.
+---
+<p align="center">Made with ❤️ by Rahul Raj Jaiswal</p>
